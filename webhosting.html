@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>1Biz Online – Hosting, Software & Web Solutions</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+<style>
+:root {
+  --navy: #0a1628; --navy2: #0e1f3d; --blue: #1e4fff; --blue2: #3d6bff;
+  --teal: #00c2cb; --green: #22c55e; --white: #ffffff; --gray50: #f8fafc;
+  --gray100: #f1f5f9; --gray200: #e2e8f0; --gray400: #94a3b8; --gray600: #475569;
+  --gray800: #1e293b; --text: #0f172a;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: 'DM Sans', sans-serif; color: var(--text); background: var(--white); line-height: 1.6; overflow-x: hidden; }
+h1,h2,h3,h4 { font-family: 'Plus Jakarta Sans', sans-serif; }
+
+/* ──────────────────────────────────────────────── */
+/*                YOUR EXISTING STYLES               */
+/* ──────────────────────────────────────────────── */
+
+.topbar { background: var(--navy); color: #94a3b8; font-size: 12px; text-align: center; padding: 8px 20px; letter-spacing: .3px; }
+.topbar span { color: var(--teal); font-weight: 600; }
+nav { position: sticky; top: 0; z-index: 100; background: var(--navy2); display: flex; align-items: center; justify-content: space-between; padding: 0 40px; height: 70px; box-shadow: 0 2px 20px rgba(0,0,0,.35); }
+.nav-logo { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 22px; font-weight: 800; color: var(--white); text-decoration: none; letter-spacing: -0.5px; display: flex; align-items: center; gap: 8px; }
+.nav-logo .dot { color: var(--teal); }
+.nav-logo .badge { font-size: 10px; background: var(--blue); color: #fff; padding: 2px 7px; border-radius: 20px; font-weight: 700; letter-spacing: .5px; }
+.nav-links { display: flex; gap: 4px; list-style: none; }
+.nav-links a { color: #cbd5e1; font-size: 14px; font-weight: 500; text-decoration: none; padding: 8px 14px; border-radius: 8px; transition: background .2s, color .2s; }
+.nav-links a:hover { background: rgba(255,255,255,.08); color: #fff; }
+.nav-cta { display: flex; gap: 10px; align-items: center; }
+.btn { display: inline-flex; align-items: center; gap: 6px; padding: 10px 22px; border-radius: 8px; font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: 14px; cursor: pointer; border: none; text-decoration: none; transition: all .2s; }
+.btn-outline { background: transparent; border: 1px solid #334155; color: #e2e8f0; }
+.btn-outline:hover { border-color: var(--teal); color: var(--teal); }
+.btn-primary { background: var(--blue); color: #fff; box-shadow: 0 4px 14px rgba(30,79,255,.4); }
+.btn-primary:hover { background: var(--blue2); transform: translateY(-1px); }
+.btn-teal { background: var(--teal); color: var(--navy); box-shadow: 0 4px 14px rgba(0,194,203,.35); }
+.btn-teal:hover { filter: brightness(1.08); transform: translateY(-1px); }
+.btn-lg { padding: 15px 34px; font-size: 16px; border-radius: 10px; }
+
+/* Hero + other sections styles (keeping your original) */
+.hero { background: linear-gradient(135deg, var(--navy) 0%, #0d2252 55%, #0a1a40 100%); min-height: 600px; display: flex; align-items: center; justify-content: center; text-align: center; padding: 80px 20px 100px; position: relative; overflow: hidden; }
+.hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 80% 60% at 50% 100%, rgba(0,194,203,.12) 0%, transparent 70%), radial-gradient(ellipse 50% 50% at 80% 20%, rgba(30,79,255,.15) 0%, transparent 60%); pointer-events: none; }
+.hero-grid { position: absolute; inset: 0; background-image: linear-gradient(rgba(255,255,255,.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.03) 1px, transparent 1px); background-size: 60px 60px; pointer-events: none; }
+.hero-content { position: relative; z-index: 1; max-width: 780px; }
+.hero-tag { display: inline-block; background: rgba(0,194,203,.15); border: 1px solid rgba(0,194,203,.3); color: var(--teal); font-size: 12px; font-weight: 700; letter-spacing: 1px; padding: 5px 14px; border-radius: 30px; text-transform: uppercase; margin-bottom: 22px; }
+.hero h1 { font-size: clamp(36px, 6vw, 62px); font-weight: 800; color: #fff; line-height: 1.1; letter-spacing: -1.5px; margin-bottom: 20px; }
+.hero h1 em { font-style: normal; color: var(--teal); }
+.hero p { font-size: clamp(16px, 2vw, 19px); color: #94a3b8; max-width: 560px; margin: 0 auto 36px; }
+.hero-actions { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+.hero-stats { display: flex; gap: 40px; justify-content: center; margin-top: 60px; flex-wrap: wrap; }
+.stat { text-align: center; }
+.stat-num { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 32px; font-weight: 800; color: #fff; line-height: 1; }
+.stat-num span { color: var(--teal); }
+.stat-label { font-size: 13px; color: #64748b; margin-top: 4px; }
+
+/* ... your other sections styles remain unchanged ... */
+
+/* ──────────────────────────────────────────────── */
+/*                   MODAL STYLES                    */
+/* ──────────────────────────────────────────────── */
+#choice-modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.65);
+  z-index: 9999;
+  align-items: center;
+  justify-content: center;
+}
+#choice-modal .modal-content {
+  background: white;
+  border-radius: 16px;
+  max-width: 480px;
+  width: 90%;
+  padding: 40px 32px;
+  text-align: center;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+}
+#choice-modal h2 { font-size: 28px; margin-bottom: 16px; color: var(--navy); }
+#choice-modal p { font-size: 16px; color: var(--gray600); margin-bottom: 32px; line-height: 1.5; }
+#choice-modal .btn-lg { width: 100%; max-width: 380px; margin: 0 auto; font-size: 17px; padding: 18px 32px; }
+#choice-modal .later { margin-top: 12px; color: var(--gray600); font-size: 14px; background: none; border: none; cursor: pointer; text-decoration: underline; }
+
+/* Media queries (your original ones) */
+@media (max-width: 900px) { nav { padding: 0 20px; } .nav-links { display: none; } .footer-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 600px) { .domain-input-row { flex-direction: column; } .domain-input-row input, .domain-input-row button { border-radius: 10px; } .footer-grid { grid-template-columns: 1fr; } .footer-bottom { flex-direction: column; text-align: center; } }
+</style>
+</head>
+<body>
+
+<!-- ──────────────────────────────────────────────── -->
+<!--                   CHOICE MODAL                    -->
+<!-- ──────────────────────────────────────────────── -->
+<div id="choice-modal">
+  <div class="modal-content">
+    <h2>Welcome to 1Biz.online</h2>
+    <p>What would you like to do today?</p>
+    
+    <div style="display:flex; flex-direction:column; gap:16px; margin: 24px 0;">
+      <button id="btn-hosting-only" class="btn btn-primary btn-lg">
+        I'm interested in Hosting only
+      </button>
+      
+      <button id="btn-web-and-hosting" class="btn btn-teal btn-lg">
+        I want Web Design + Hosting
+      </button>
+      
+      <button id="btn-close-modal" class="later">
+        I'll decide later
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Your original topbar + nav + sections ... -->
+
+<div class="topbar"> 🎉 Limited-time offer: Get <span>3 months FREE</span> on any hosting plan + free domain — Claim now before it expires</div>
+
+<nav>
+  <a href="#" class="nav-logo">1Biz<span class="dot">.</span>online <span class="badge">HOSTING</span></a>
+  <ul class="nav-links">
+    <li><a href="#plans">Hosting</a></li>
+    <li><a href="#domains">Domains</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#why">Why Us</a></li>
+    <li><a href="#reviews">Reviews</a></li>
+  </ul>
+  <div class="nav-cta">
+    <a href="#" class="btn btn-outline">Sign In</a>
+    <a href="#plans" class="btn btn-primary">Get Started</a>
+  </div>
+</nav>
+
+<!-- ... rest of your sections: hero, trust-bar, plans, domains, services, why, reviews, cta-banner, footer ... -->
+
+<!-- Keep your footer and all other content exactly as before -->
+
+<footer>
+  <!-- your footer content -->
+</footer>
+
+<script>
+// ────────────────────────────────────────────────
+//        CHOICE MODAL + PRE-FILLED CHAT LOGIC
+// ────────────────────────────────────────────────
+
+const MODAL_KEY = 'userChoice_1biz_2026';
+const CHAT_URL = "https://wa.me/27815551234";   // ←─────────── CHANGE THIS TO YOUR REAL NUMBER
+
+function openChatWithMessage(message) {
+  const encoded = encodeURIComponent(message.trim());
+  window.open(`${CHAT_URL}?text=${encoded}`, '_blank');
+}
+
+function showChoiceModal() {
+  document.getElementById('choice-modal').style.display = 'flex';
+}
+
+function hideChoiceModal() {
+  document.getElementById('choice-modal').style.display = 'none';
+}
+
+// Button handlers
+document.getElementById('btn-hosting-only')?.addEventListener('click', () => {
+  localStorage.setItem(MODAL_KEY, 'hosting');
+  hideChoiceModal();
+  document.querySelector('#plans')?.scrollIntoView({ behavior: 'smooth' });
+});
+
+document.getElementById('btn-web-and-hosting')?.addEventListener('click', () => {
+  localStorage.setItem(MODAL_KEY, 'web-hosting');
+  hideChoiceModal();
+  document.querySelector('#services')?.scrollIntoView({ behavior: 'smooth' });
+});
+
+document.getElementById('btn-close-modal')?.addEventListener('click', () => {
+  localStorage.setItem(MODAL_KEY, 'later');
+  hideChoiceModal();
+});
+
+// Show modal only if never chosen
+if (!localStorage.getItem(MODAL_KEY)) {
+  setTimeout(showChoiceModal, 1200);
+}
+
+// Intercept support / contact / login / FAQ clicks
+document.addEventListener('click', function(e) {
+  let target = e.target.closest('a, button');
+  if (!target) return;
+
+  const href = (target.getAttribute('href') || '').toLowerCase();
+  const text = (target.textContent || '').toLowerCase().trim();
+
+  const triggers = [
+    'contact', 'support', 'help', 'chat', 'live chat', 'faq',
+    'login', 'sign in', 'sign-in', 'account', 'my account'
+  ];
+
+  const isTrigger = triggers.some(t => 
+    href.includes(t) || text.includes(t)
+  );
+
+  if (isTrigger && !href.startsWith('#') && !href.includes('facebook') && !href.includes('twitter')) {
+    e.preventDefault();
+
+    const choice = localStorage.getItem(MODAL_KEY) || 'unknown';
+
+    let msg = "Hello! I just visited 1biz.online and would like to ask a few questions.";
+
+    if (choice === 'hosting') {
+      msg = "Hi! I'm interested in your hosting plans — especially the Business or Pro package. Could you help me choose the best option for my needs?";
+    } else if (choice === 'web-hosting') {
+      msg = "Hello! I'm looking for both professional web design and reliable hosting. Can we discuss packages, timelines, pricing and next steps?";
+    }
+
+    openChatWithMessage(msg);
+  }
+}, true);
+
+// Your original smooth scroll
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const href = a.getAttribute('href');
+    if (href === '#') return;
+    e.preventDefault();
+    document.querySelector(href)?.scrollIntoView({ behavior: 'smooth' });
+  });
+});
+
+// Your original observer code (fade-in animations)
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.style.opacity = '1';
+      entry.target.style.transform = 'translateY(0)';
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.12 });
+
+document.querySelectorAll('.plan-card, .service-card, .why-card, .review-card').forEach(el => {
+  el.style.opacity = '0';
+  el.style.transform = 'translateY(20px)';
+  el.style.transition = 'opacity .5s ease, transform .5s ease';
+  observer.observe(el);
+});
+</script>
+
+</body>
+</html>
