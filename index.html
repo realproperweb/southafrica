@@ -645,21 +645,6 @@
     observer.observe(el);
   });
 </script>
-  <script>
-  function openWhatsApp(message) {
-    const phone = "27689124033";
-    const encodedMsg = encodeURIComponent(message);
-    window.open(`https://wa.me/${phone}?text=${encodedMsg}`, '_blank');
-  }
-
-  // Optional: attach to all elements with a special class
-  document.querySelectorAll('.whatsapp-cta').forEach(el => {
-    el.addEventListener('click', (e) => {
-      e.preventDefault();
-      const msg = el.dataset.message || "Hi, let's get started with hosting";
-      openWhatsApp(msg);
-    });
-  });
-</script>
+  
 </body>
 </html>
